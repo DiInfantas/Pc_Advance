@@ -6,7 +6,9 @@ urlpatterns=[
     path('nosotros/',nosotros, name="nosotros"),
     path('contacto/',contacto, name="contacto"),
     path('catalogo/',catalogo, name="catalogo"),
-    path('',lista_productos,name="lista_vehiculos"),
+
+    path('catalogo/',lista_productos,name="lista_productos"),
+    
     path('guarda_producto/',guarda_producto,name="guarda_producto"),
     path('elimina_producto/<id>',elimina_producto,name="elimina_producto"),
     path('form_mod_producto/<id>',form_mod_producto ,name="form_mod_producto"),

@@ -13,11 +13,11 @@
     <div class="container">
 
       <div class="row">
-          <h1>Listado de Productos</h1>
+          <h1 style="color: aliceblue;">Listado de Productos</h1>
       </div><br>
       <a href="{% url 'guarda_producto' %}"  class="btn btn-primary">Ingresar Productos</a> <br><br>
       <div class="row">
-          <table>
+          <table style="color: aliceblue;">
               <tr>
                   <td>IdProducto</td>
                   <td>Nombre</td>
@@ -25,7 +25,7 @@
                   <td>Modelo</td>
                   <td>CATEGORIA</td>
               </tr>
-              {% for prod in Productos %}
+              {% for prod in pcadvance %}
               <tr>
                   <td>{{prod.idProducto}}</td>
                   <td>{{prod.nombre}}</td>
@@ -33,8 +33,8 @@
                   <td>{{prod.modelo}}</td>
                   <td>{{prod.categoria}}</td>
                   <td>
-                     <a href="{% url 'form_mod_producto' prod.Producto %}"  class="btn btn-primary">Modificar</a> 
-                     <a href="{% url 'elimina_producto' prod.Producto %}"  class="btn btn-danger">Eliminar</a>       
+                     <a href="{% url 'form_mod_producto' prod.idProducto %}"  class="btn btn-primary">Modificar</a> 
+                     <a href="{% url 'elimina_producto' prod.idProducto %}"  class="btn btn-danger">Eliminar</a>       
                   </td>
               </tr>
 
