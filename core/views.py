@@ -17,8 +17,8 @@ def nosotros (request):
     return render(request, "core/nosotros.html")
 
 def lista_productos(request):
-    prod = Producto.objects.all()
-    return render(request, "core/catalogo.html",{"productos":prod})
+    productos = Producto.objects.all()
+    return render(request, 'lista_productos.html', {'productos': productos})
 
 def guarda_producto(request):
     form = ProductoFormulario

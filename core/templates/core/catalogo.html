@@ -18,6 +18,7 @@
       <a href="{% url 'guarda_producto' %}"  class="btn btn-primary">Ingresar Productos</a> <br><br>
       <div class="row">
           <table style="color: aliceblue;">
+              
               <tr>
                   <td>IdProducto</td>
                   <td>Nombre</td>
@@ -25,13 +26,17 @@
                   <td>Modelo</td>
                   <td>CATEGORIA</td>
               </tr>
-              {% for prod in pcadvance %}
+              {% for producto in productos %}
+                 <p>{{ producto.nombre }} - {{ producto.precio }}</p>
+              {% endfor %}
+
+              {% for producto in productos %}
               <tr>
-                  <td>{{prod.idProducto}}</td>
-                  <td>{{prod.nombre}}</td>
-                  <td>{{prod.precio}}</td>
-                  <td>{{prod.modelo}}</td>
-                  <td>{{prod.categoria}}</td>
+                  <td>{{producto.idProducto}}</td>
+                  <td>{{producto.nombre}}</td>
+                  <td>{{producto.precio}}</td>
+                  <td>{{producto.modelo}}</td>
+                  <td>{{producto.categoria}}</td>
                   <td>
                      <a href="{% url 'form_mod_producto' prod.idProducto %}"  class="btn btn-primary">Modificar</a> 
                      <a href="{% url 'elimina_producto' prod.idProducto %}"  class="btn btn-danger">Eliminar</a>       
