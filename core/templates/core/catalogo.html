@@ -11,109 +11,35 @@
     </section>
 
     <div class="container">
-      <p class="d-inline-block class=" align-text-bottom style="color: white;" id="temperatura"></p>
-      <div class="row py-5">
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title text py-3"> Celular Samsung Galaxy </h5>
 
-              <a href="productos/producto1.html" class="btn btn-primary"> Ver más...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Monitor Led </h5>
+      <div class="row">
+          <h1>Listado de Productos</h1>
+      </div><br>
+      <a href="{% url 'guarda_producto' %}"  class="btn btn-primary">Ingresar Productos</a> <br><br>
+      <div class="row">
+          <table>
+              <tr>
+                  <td>IdProducto</td>
+                  <td>Nombre</td>
+                  <td>Precio</td>
+                  <td>Modelo</td>
+                  <td>CATEGORIA</td>
+              </tr>
+              {% for prod in Productos %}
+              <tr>
+                  <td>{{prod.idProducto}}</td>
+                  <td>{{prod.nombre}}</td>
+                  <td>{{prod.precio}}</td>
+                  <td>{{prod.modelo}}</td>
+                  <td>{{prod.categoria}}</td>
+                  <td>
+                     <a href="{% url 'form_mod_producto' prod.Producto %}"  class="btn btn-primary">Modificar</a> 
+                     <a href="{% url 'elimina_producto' prod.Producto %}"  class="btn btn-danger">Eliminar</a>       
+                  </td>
+              </tr>
 
-              <a href="productos/producto2.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Notebook Lenovo </h5>
-
-              <a href="productos/producto3.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Audifonos HyperX </h5>
-
-              <a href="productos/producto4.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
+              {% endfor %}
+          </table>
       </div>
-      <div class="row py-5">
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p5.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Televisor Sharp </h5>
-
-              <a href="productos/producto5.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p6.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Audifonos Apple </h5>
-
-              <a href="productos/producto6.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p7.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Celular LG </h5>
-
-              <a href="productos/producto7.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card" style="width: 19rem;">
-            <img src="img/p8.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title py-3"> Mouse Apple </h5>
-
-              <a href="productos/producto8.html" class="btn btn-primary">Ver más...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-      </li>
-      <li class="page-item active" aria-current="page">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Siguiente</a>
-      </li>
-    </ul>
-  </nav>
 
   {% endblock%}
